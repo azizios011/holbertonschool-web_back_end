@@ -6,7 +6,8 @@ from typing import List, Union
 
 
 """mxd_lst: List'[Union[int, float]]' indicates that the parameter 'mxd_lst'
-is expected to be a list containing elements that can be either integers '(int)'
+is expected to be a list containing 
+elements that can be either integers '(int)'
 or floats '(float)'. We use the 'Union' type hint to specify that
 the list can contain elements of either type."""
 
