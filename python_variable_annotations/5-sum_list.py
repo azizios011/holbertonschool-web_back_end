@@ -9,5 +9,6 @@ a parameter 'input_list' that is expected to be a list of floats."""
 
 
 def sum_list(input_list: List[float]) -> float:
-    """ '-> float' indicates that the function is expected to return a float."""
+    """ '-> float' indicates that the function is
+    expected to return a float."""
     return sum(input_list)
