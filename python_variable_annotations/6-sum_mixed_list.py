@@ -13,7 +13,7 @@ the list can contain elements of either type."""
 
 
 def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
-    
+
     """-> float indicates that the function is expected to return a
     float, which is the sum of the elements in the mixed list."""
 
