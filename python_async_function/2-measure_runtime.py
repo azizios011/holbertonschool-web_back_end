@@ -10,10 +10,12 @@ from random import uniform
 
 
 async def wait_random(max_delay: int) -> float:
+    """ an asynchronous coroutine 'wait_random' """
     return uniform(0, max_delay)
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
+    """an async routine called 'wait_n' """
     tasks = [wait_random(max_delay) for _ in range(n)]
     delays = await asyncio.gather(*tasks)
     return sorted(delays)
