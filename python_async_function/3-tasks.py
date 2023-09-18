@@ -4,6 +4,7 @@
 
 import asyncio
 from random import uniform
+from asyncio.tasks import Task
 
 
 async def wait_random(max_delay: int) -> float:
@@ -11,7 +12,7 @@ async def wait_random(max_delay: int) -> float:
     return uniform(0, max_delay)
 
 
-def task_wait_random(max_delay: int) -> int:
+def task_wait_random(max_delay: int) -> Task:
     """Get the current event loop"""
     loop = asyncio.get_event_loop()
     """ 'asyncio.create_task(wait_random(max_delay))',
