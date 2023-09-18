@@ -16,7 +16,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     return sorted(delays)
 
 
-def measure_time(n, max_delay):
+def measure_time(n: int, max_delay: int) -> float:
     start = time.time()
     asyncio.run(wait_n(n, max_delay))
     end = time.time()
