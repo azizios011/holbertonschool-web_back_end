@@ -19,9 +19,11 @@ async def wait_random(max_delay: int) -> float:
     """
     return uniform(0, max_delay)
 
+
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """
-    Execute multiple coroutines concurrently and return their delays in ascending order.
+    Execute multiple coroutines concurrently and return their
+    delays in ascending order.
 
     Args:
         n (int): The number of coroutines to execute.
