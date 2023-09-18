@@ -11,7 +11,8 @@ async def wait_random(max_delay: int) -> float:
     return uniform(0, max_delay)
 
 
-def task_wait_random(max_delay):
+def task_wait_random(max_delay: int) -> int:
+    """Get the current event loop"""
     loop = asyncio.get_event_loop()
     """ 'asyncio.create_task(wait_random(max_delay))',
     which will execute 'wait_random' asynchronously."""
