@@ -6,7 +6,7 @@ import asyncio
 import random
 
 
-async def async_generator():
+async def async_generator() -> float:
     """Loop 10 times"""
     for _ in range(10):
         """ Wait for 1 second asynchronously"""
