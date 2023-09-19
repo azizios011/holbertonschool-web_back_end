@@ -6,6 +6,7 @@ import asyncio
 import random
 from typing import Generator
 
+
 async def async_generator() -> Generator[float, None, None]:
     """Loop 10 times"""
     for _ in range(10):
