@@ -5,8 +5,10 @@
 import asyncio
 import asyncio.tasks
 import random
+import time
 from typing import Generator
 from typing import List
+import time
 
 
 async def async_generator() -> Generator[float, None, None]:
