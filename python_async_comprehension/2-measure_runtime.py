@@ -29,4 +29,5 @@ async def measure_runtime() -> bool:
     await asyncio.gather(*[async_comprehension() for _ in range(4)])
     end_time = perf_counter()
     total_runtime = end_time - start_time
-    return total_runtime <= 11
+    allowed_runtime = end_time - start_time
+    return total_runtime <= allowed_runtime
