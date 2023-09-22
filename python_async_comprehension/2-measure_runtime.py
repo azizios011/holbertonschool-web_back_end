@@ -8,7 +8,7 @@ import random
 import time
 from typing import Generator
 from typing import List
-import time
+from time import perf_counter
 
 
 async def async_generator() -> Generator[float, None, None]:
@@ -24,7 +24,9 @@ async def async_comprehension() -> List[float]:
     return numbers
 
 
-async def measure_runtime() -> float:
-    coroutines = [async_comprehension() for _ in range(4)]
-    results = await asyncio.gather(*coroutines)
-    return sum(len(result) for result in results)
+async def measure_runtime() -> bool:
+    start_time = perf_counter()
+    await asyncio.gather(*[async_comprehension() for _ in range(4)])
+    end_time = perf_counter()
+    total_runtime = end_time - start_time
+    return total_runtime <= 11
