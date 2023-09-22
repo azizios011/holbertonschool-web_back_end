@@ -24,10 +24,10 @@ async def async_comprehension() -> List[float]:
     return numbers
 
 
-async def measure_runtime() -> bool:
-    start_time = perf_counter()
-    await asyncio.gather(*[async_comprehension() for _ in range(4)])
-    end_time = perf_counter()
-    total_runtime = end_time - start_time
-    allowed_runtime = end_time - start_time
-    return total_runtime <= allowed_runtime
+async def measure_runtime() -> float:
+    """Measure the total runtime of four parallel async comprehensions."""
+    start_time = asyncio.get_event_loop().time()
+    tasks = [async_comprehension() for _ in range(4)]
+    await asyncio.gather(*tasks)
+    end_time = asyncio.get_event_loop().time()
+    return end_time - start_time
