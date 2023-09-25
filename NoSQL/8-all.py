@@ -2,9 +2,6 @@
 """Lists all documents in a MongoDB collection."""
 
 
-from typing import List
-
-
 def list_all(mongo_collection):
     """ 'mongo_collection (pymongo.collection.Collection)':
     The MongoDB collection object."""
