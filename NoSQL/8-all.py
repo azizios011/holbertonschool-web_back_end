@@ -8,6 +8,9 @@ from typing import List
 def list_all(mongo_collection):
     """ 'mongo_collection (pymongo.collection.Collection)':
     The MongoDB collection object."""
-    documents = List(mongo_collection.find({}))
+    documents = []
+    cursor = mongo_collection.find()
+    for document in cursor:
+        documents.append(document)
     """ 'list': A list of all documents in the collection."""
     return documents
