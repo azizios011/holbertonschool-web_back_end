@@ -7,7 +7,11 @@ def insert_school(mongo_collection, **kwargs):
     """ 'mongo_collection (pymongo.collection.Collection)':
     The 'MongoDB' collection object. '**kwargs': Keyword
     arguments representing the fields and values to insert."""
-    result = mongo_collection.insert_one(kwargs)
-    new_id = result.inserted_id
+    documento = {}
+    for clave, valor in kwargs.items():
+        documento[clave] = valor
+    insertar = mongo_collection.insert_one(documento)
     """ 'str': The 'new _id' of the inserted document."""
-    return str(new_id)
+    if insertar.acknowledged:
+        return insertar.inserted_id
+    return {}
