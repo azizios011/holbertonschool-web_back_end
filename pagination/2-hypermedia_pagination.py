@@ -45,8 +45,11 @@ class Server:
         return start, end
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """ a 'get_hyper' method that takes the same arguments
+        (and defaults) as 'get_page' and returns a dictionary """
         page_data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
+        """a dictionary containing the following key-value pairs"""
         hypermedia_info = {
             "page_size": len(page_data),
             "page": page,
