@@ -27,19 +27,19 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            """a method named get_page that takes two integer arguments page
-            with default value 1 and page_size with default value 10."""
-            assert isinstance(page, int) and page > 0
-            assert isinstance(page_size, int) and page_size > 0
+        """a method named get_page that takes two integer arguments page
+        with default value 1 and page_size with default value 10."""
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
 
-            total_pages = math.ceil(len(self.dataset()) / page_size)
+        total_pages = math.ceil(len(self.dataset()) / page_size)
 
-            if 1 <= page <= total_pages:
-                start, end = self.index_range(page, page_size)
-                new = self.dataset()[start:end]
-                return new
-            else:
-                return []
+        if 1 <= page <= total_pages:
+            start, end = self.index_range(page, page_size)
+            new = self.dataset()[start:end]
+            return new
+        else:
+            return []
 
     def index_range(self, page: int, page_size: int) -> tuple:
         """Calculate the start and end indices for pagination."""
