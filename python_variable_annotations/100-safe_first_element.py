@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# The types of the elements of the input are not known
+"""The types of the elements of the input are not known"""
 
 
 from typing import Sequence, Any, Union, Optional
