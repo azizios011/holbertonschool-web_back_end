@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-"""type annotations """
 
 
 from typing import List, Tuple
 
 
 def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
-    """zoom_array"""
     zoomed_in: List[int] = [
         item for item in lst
         for i in range(factor)
@@ -15,7 +13,6 @@ def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
 
 
 array = (12, 72, 91)
-"""Use a tuple here"""
 
 zoom_2x = zoom_array(array)
 
